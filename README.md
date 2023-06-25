@@ -1,4 +1,4 @@
-# co8c441fab4c67f45dab4b751
+# Color Scheme Generator
 
 Quick start:
 
