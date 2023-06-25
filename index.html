@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <title>Scrimba | Module 9 | Color Scheme Generator</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Link to the main stylesheet -->
+        <link rel="stylesheet" href="index.css">
+        
+        <!-- Preconnect to Google Fonts for faster loading -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- Import 'Inter' Google font -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        
+        <!-- Import Font Awesome icons for the footer -->
+        <script src="https://kit.fontawesome.com/e5f441b479.js" crossorigin="anonymous"></script>
+        
+        <!-- Add a favicon to the tab -->
+        <link rel="icon" href="images/tabicon.png" type="image/x-icon">
+    </head>
+    
+    
+    <body>
+        <!-- Header: contains title and control interface -->
+        <header class='header-container'>
+            <!-- Title and Dark Mode toggle -->
+            <div class='header-top-container'>
+                <h1 class='header-title'>Color Scheme Generator</h1>
+                <div class='toggle-btn'>
+                    <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Controls: color input, scheme dropdown, generate button -->
+            <div class='header-bottom-container'>
+                <input type='color' id='color-input' class='color-input header-item'>
+                <div class='color-scheme-dropdown-container header-item'>
+                    <select id='color-scheme-dropdown' class='color-scheme-dropdown'>
+                        <option value='' selected>Monochrome</option>
+                        <option value='monochrome-dark'>Monochrome-dark</option>
+                        <option value='monochrome-light'>Monochrome-light</option>
+                        <option value='analogic'>Analogic</option>
+                        <option value='complement'>Complement</option>
+                        <option value='analogic-complement'>Analogic-complement</option>
+                        <option value='triad'>Triad</option>
+                    </select>
+                </div>
+
+                <button id='color-btn' class='color-btn header-item'>Get Color Scheme</button>
+            </div>
+        </header>
+        
+        <!-- Main section: displays the generated color scheme -->
+        <main id='color-container' class='color-container'>
+        </main>
+        
+        <!-- Footer: contains social media links and credits -->
+        <footer>
+            <div id="footer-icon" class='footer-icon'>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <i id="github" class="fa-brands fa-github fa-xl footer-icon"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <i class="fa-brands fa-linkedin fa-xl footer-icon"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <i class="fa-brands fa-twitter fa-xl footer-icon"></i>
+                </a>
+            </div>
+            
+            <div class='footer-text'>
+                <p>Designed by <a href='https://twitter.com/scrimba' target="_blank">@Scrimba 💜</a> </p>
+                <p>Constructed by Tak</p>
+            </div>
+        </footer>
+        
+        <!-- Link to the main JavaScript file -->
+        <script src="index.js" type='module'></script>
+    </body>
+</html>
