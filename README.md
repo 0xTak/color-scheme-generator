@@ -1,21 +1,42 @@
 # Color Scheme Generator
 
-Quick start:
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Stretch Goals](#stretch-goals)
+- [Personal Stretch Goals](#personal-stretch-goals)
+- [Figma File](#figma-file)
 
-```
-$ npm install
-$ npm start
-````
+## Overview
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+The Color Scheme Generator is a handy tool that allows users to input a base color and then receive a palette of complementary colors based on a chosen scheme. This tool leverages the power of the [TheColorAPI](https://www.thecolorapi.com/) to generate these palettes and presents them in a user-friendly manner.
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+This is a solo project as part of the Scrimba Frontend Career Path Module 8. 
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+## Features
 
-Happy Coding!
+- **Responsive Design**: The application is mobile-friendly and displays correctly across devices of all sizes.
+  
+- **Color Scheme Choices**: Users can choose from a variety of color schemes like monochrome, analogic, complement, and more.
+
+- **Instant Color Preview**: As soon as the user selects a color scheme, a preview of colors in that scheme is presented.
+
+- **Color Copy Feature**: Users can easily copy the HEX code of any color in the palette to their clipboard with a simple click.
+
+- **Dark Mode**: The application supports a dark mode for those who prefer it.
+
+## Requirements
+
+- Choose "seed color" with an `<input type='color' />`
+- Choose color scheme mode in a `<select>` box
+- Clicking button makes a request to The Color API to get a color scheme 
+- Display the scheme colors and hex values on the page 
+
+## Stretch Goals
+
+- Click hex values to copy to clipboard 
+
+## Personal Stretch Goals
+
+- 
