@@ -6,7 +6,6 @@
 - [Requirements](#requirements)
 - [Stretch Goals](#stretch-goals)
 - [Personal Stretch Goals](#personal-stretch-goals)
-- [Figma File](#figma-file)
 
 ## Overview
 
