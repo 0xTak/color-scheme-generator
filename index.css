@@ -30,10 +30,10 @@ Header
 }
 
 .header-title {
-    font-size: 2em;
+    font-size: 1.5em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .header-bottom-container {
@@ -41,7 +41,7 @@ Header
     grid-template-columns: 1fr 4fr;
     grid-gap: 0.75em;
     width: 90%;
-    margin: 0 auto 2em;
+    margin: 0 auto 1em;
     align-items: center;
     grid-template-areas:
         "colorInput dropDownMenu dropDownMenu dropDownMenu dropDownMenu"
@@ -51,7 +51,7 @@ Header
 .color-input {
     grid-area: colorInput;
     width: 20vw;
-    height: 4.125em;
+    height: 3.5em;
 }
 
 .color-scheme-dropdown-container {
@@ -60,7 +60,7 @@ Header
     grid-area: dropDownMenu;
     width: 68vw;
     margin: 0 auto;
-    padding: 1em 0.8125em;
+    padding: 0.5em 0.25em;
     border-radius: 6px;
     border: 1px solid #D1D5DB;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
@@ -83,7 +83,7 @@ Header
     font-size: 1.125em;
     grid-area: getColorBtn;
     line-height: 1em;
-    padding: 1.25em 0.6875em;
+    padding: 1em 0.5em;
     border-radius: 4px;
     border: 1px solid #D1D5DB;
     background: #FFF;
@@ -123,7 +123,7 @@ Main section
 
 .color-result {
     width: 80vw;
-    height: 10em;
+    height: 12vh;
 }
 
 .color-result:hover {
@@ -145,11 +145,11 @@ Footer
 
 footer {
     text-align: center;
-    margin: 3em;
+    margin: 2em;
 }
 
 .footer-icon a {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0 0.75em 2em 0.75em;
 }
 
@@ -294,11 +294,11 @@ Media queries
     /* header */
 
     .header-top-container {
+        margin-top: 1em;
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
         align-items: center; 
         justify-items: center;
-        margin: 1em;
     }
 
     .header-top-container .header-title {
@@ -310,9 +310,9 @@ Media queries
     }
     
     .header-title {
-        font-size: 2.5em;
+        margin: 0;
+        font-size: 2.25em;
         white-space: nowrap;
-        padding: .25em;
     }
 
     .header-bottom-container {
@@ -361,7 +361,7 @@ Media queries
 
     .color-result {
         width: 100%;
-        height: 70vh;
+        height: 60vh;
         transition: 0.5s;
     }
 
@@ -379,27 +379,32 @@ Media queries
     /* footer */
 
     footer {
-        text-align: center;
-        margin: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5em 0 0 0;
+    }
+
+    footer nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
     }
     
     .footer-text {
         display: flex;
         justify-content: center;
-        margin-bottom: 1em;
-    }
-
-    .footer-icon a {
-        font-size: 1.5em;
-        margin: 0.75em;
-    }
-    
-    footer p {
-        margin: 0 1em;
+        gap: 1em;
     }
 
     .footer-icon {
-        padding: 0.25em;
-        margin-bottom: 1em;
-    }   
+        font-size: 1.25em;
+        margin-bottom: 0;
+    }
+
+    .footer-icon a {
+        margin: 0;
+    }
 }
