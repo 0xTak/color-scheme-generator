@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <title>Scrimba | Module 9 | Color Scheme Generator</title>
+        <title>Scrimba | Module 8 | Color Scheme Generator</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
         
         <!-- Import 'Inter' Google font -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-        
+
         <!-- Import Font Awesome icons for the footer -->
         <script src="https://kit.fontawesome.com/e5f441b479.js" crossorigin="anonymous"></script>
         
@@ -32,7 +32,7 @@
                 <h1 class='header-title'>Color Scheme Generator</h1>
                 <div class='toggle-btn'>
                     <label class="switch">
-                    <input type="checkbox" id="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" aria-label='Dark mode toggle switch'>
                     <span class="slider round"></span>
                     </label>
                 </div>
@@ -40,7 +40,7 @@
             
             <!-- Controls: color input, scheme dropdown, generate button -->
             <div class='header-bottom-container'>
-                <input type='color' id='color-input' class='color-input header-item'>
+                <input type='color' id='color-input' class='color-input header-item' aria-label='Color picker'>
                 <div class='color-scheme-dropdown-container header-item'>
                     <select id='color-scheme-dropdown' class='color-scheme-dropdown'>
                         <option value='' selected>Monochrome</option>
@@ -52,7 +52,6 @@
                         <option value='triad'>Triad</option>
                     </select>
                 </div>
-
                 <button id='color-btn' class='color-btn header-item'>Get Color Scheme</button>
             </div>
         </header>
@@ -63,17 +62,17 @@
         
         <!-- Footer: contains social media links and credits -->
         <footer>
-            <div id="footer-icon" class='footer-icon'>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <nav id="footer-icon" class='footer-icon'>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" aria-label='Github'>
                     <i id="github" class="fa-brands fa-github fa-xl footer-icon"></i>
                 </a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" aria-label='LinkedIn'>
                     <i class="fa-brands fa-linkedin fa-xl footer-icon"></i>
                 </a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" aria-label='Twitter'>
                     <i class="fa-brands fa-twitter fa-xl footer-icon"></i>
                 </a>
-            </div>
+            </nav>
             
             <div class='footer-text'>
                 <p>Designed by <a href='https://twitter.com/scrimba' target="_blank">@Scrimba 💜</a> </p>
