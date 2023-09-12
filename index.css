@@ -95,6 +95,16 @@ Header
     box-shadow: 0 0 3px #3D4B60;
 }
 
+.color-input:hover,
+.color-btn:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.color-input:active,
+.color-btn:active {
+    transform: scale(0.95) !important;
+}
 
 .color-input:hover,
 .color-scheme-dropdown:hover,
@@ -127,6 +137,7 @@ Main section
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 .copy-text {
@@ -139,6 +150,10 @@ Main section
     transform: scale(1.025);
     border-radius: 10px;
     cursor: pointer;
+}
+
+.color-result:active {
+    transform: scale(0.95) !important;
 }
 
 .color-result-hex-code {
