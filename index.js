@@ -28,7 +28,7 @@ fetch(defaultUrl)
         for(let color of colors){
             htmlString += `
                 <section class='color-result-container'>
-                    <div class='color-result' style='background-color:${color.hex.value};'>
+                    <div class='color-result' style='background-color:${color.hex.value};' tabindex="0" role="button" aria-label="Color box">
                         <span class="copy-text">Copied!</span>
                     </div>
                     <div class='color-result-hex-code'>
@@ -57,7 +57,7 @@ getColorSchemeBtn.addEventListener('click', function(){
             for (let color of colors){
                 htmlString += `
                     <section class='color-result-container'>
-                        <div class='color-result' style='background-color:${color.hex.value};'>
+                        <div class='color-result' style='background-color:${color.hex.value};' tabindex="0" role="button" aria-label="Color box">
                             <span class="copy-text">Copied!</span>
                         </div>
                         <div class='color-result-hex-code'>
