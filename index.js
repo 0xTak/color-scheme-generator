@@ -29,6 +29,7 @@ fetch(defaultUrl)
             htmlString += `
                 <section class='color-result-container'>
                     <div class='color-result' style='background-color:${color.hex.value};'>
+                        <span class="copy-text">Copied!</span>
                     </div>
                     <div class='color-result-hex-code'>
                         ${color.hex.value}
@@ -57,6 +58,7 @@ getColorSchemeBtn.addEventListener('click', function(){
                 htmlString += `
                     <section class='color-result-container'>
                         <div class='color-result' style='background-color:${color.hex.value};'>
+                            <span class="copy-text">Copied!</span>
                         </div>
                         <div class='color-result-hex-code'>
                             ${color.hex.value}
@@ -85,6 +87,15 @@ document.body.addEventListener('click', async function(e) {
         
         // Setting the background color of the body to the RGBA value
         document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.3)`;
+
+        // Show "Copied!" text:
+        const copiedText = e.target.querySelector('.copy-text');
+        copiedText.style.visibility = "visible";
+
+        // Hide after 2 second:
+        setTimeout(() => {
+            copiedText.style.visibility = "hidden";
+        }, 2000);     
 
         try {
             await navigator.clipboard.writeText(hexCode);
