@@ -27,13 +27,13 @@ fetch(defaultUrl)
         let htmlString = ''
         for(let color of colors){
             htmlString += `
-            <section class='color-result-container'>
-                <div class='color-result' style='background-color:${color.hex.value};'>
-                </div>
-                <div class='color-result-hex-code'>
-                    ${color.hex.value}
-                </div>
-            </section> 
+                <section class='color-result-container'>
+                    <div class='color-result' style='background-color:${color.hex.value};'>
+                    </div>
+                    <div class='color-result-hex-code'>
+                        ${color.hex.value}
+                    </div>
+                </section> 
             `
         } 
         colorContainerHtml.innerHTML = htmlString 
@@ -55,13 +55,13 @@ getColorSchemeBtn.addEventListener('click', function(){
             let htmlString = ''
             for (let color of colors){
                 htmlString += `
-                <section class='color-result-container'>
-                    <div class='color-result' style='background-color:${color.hex.value};'>
-                    </div>
-                    <div class='color-result-hex-code'>
-                        ${color.hex.value}
-                    </div>
-                </section>
+                    <section class='color-result-container'>
+                        <div class='color-result' style='background-color:${color.hex.value};'>
+                        </div>
+                        <div class='color-result-hex-code'>
+                            ${color.hex.value}
+                        </div>
+                    </section>
                 `
             }
             colorContainerHtml.innerHTML = htmlString
@@ -73,19 +73,29 @@ toggleThemeBtn.addEventListener('click', function(){
     document.body.classList.toggle('dark-theme');
 })
 
-
 // Copy color to clipboard when clicked
-document.body.addEventListener('click', function(e) {
-    if (e.target.classList.contains('color-result')) {
-        const hexCode = e.target.nextElementSibling.textContent;
+document.body.addEventListener('click', async function(e) {
+    if (e.target.classList.contains('color-result') && !document.body.classList.contains('dark-theme')) {
+        const hexCode = e.target.nextElementSibling.textContent.trim();
 
-        let textarea = document.createElement('textarea');
-        textarea.value = hexCode;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+        // Extracting the RGB values from the HEX code
+        const r = parseInt(hexCode.slice(1, 3), 16);
+        const g = parseInt(hexCode.slice(3, 5), 16);
+        const b = parseInt(hexCode.slice(5, 7), 16);
+        
+        // Setting the background color of the body to the RGBA value
+        document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.3)`;
 
-        console.log('Color copied to clipboard');
+        try {
+            await navigator.clipboard.writeText(hexCode);
+            console.log('Color copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+        }
+    } else {
+        // Reset the background color when clicking elsewhere
+        document.body.style.backgroundColor = '';
     }
 });
+
+
