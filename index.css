@@ -124,6 +124,15 @@ Main section
 .color-result {
     width: 80vw;
     height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-text {
+    visibility: hidden;
+    color: #FFF;
+    font-weight: bold;
 }
 
 .color-result:hover {
