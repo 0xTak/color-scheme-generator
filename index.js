@@ -77,16 +77,18 @@ toggleThemeBtn.addEventListener('click', function(){
 
 // Copy color to clipboard when clicked
 document.body.addEventListener('click', async function(e) {
-    if (e.target.classList.contains('color-result') && !document.body.classList.contains('dark-theme')) {
+    if (e.target.classList.contains('color-result')) {
         const hexCode = e.target.nextElementSibling.textContent.trim();
 
-        // Extracting the RGB values from the HEX code
-        const r = parseInt(hexCode.slice(1, 3), 16);
-        const g = parseInt(hexCode.slice(3, 5), 16);
-        const b = parseInt(hexCode.slice(5, 7), 16);
-        
-        // Setting the background color of the body to the RGBA value
-        document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.3)`;
+        if (!document.body.classList.contains('dark-theme')) {
+            // Extracting the RGB values from the HEX code
+            const r = parseInt(hexCode.slice(1, 3), 16);
+            const g = parseInt(hexCode.slice(3, 5), 16);
+            const b = parseInt(hexCode.slice(5, 7), 16);
+                    
+            // Setting the background color of the body to the RGBA value
+            document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 0.3)`;
+        }
 
         // Show "Copied!" text:
         const copiedText = e.target.querySelector('.copy-text');
