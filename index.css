@@ -1,28 +1,49 @@
-/* 
-------------------------------
-Global
-------------------------------
-*/
+/* ----- VARIABLES ----- */
+
+:root {
+    /* Global */
+    --box-shadow-light: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    --box-shadow-deep: 0px 5px 15px rgba(0,0,0,0.3);
+    --box-shadow-focus: 0 0 4px 1px #3D4B60;
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    --main-font: 'Inter', sans-serif;
+    --base-font-size: 16px;
+    --base-transition: 0.5s;
+    --transform-transition: transform 0.3s ease-in-out;
+
+    
+    
+    /* Colors */
+    --color-primary: #374151;
+    --color-input-hover: linear-gradient(to right, #e9e4f0, #d3cce3);
+    --color-dark-theme-bg: #1F2937;
+    --color-dark-theme-text: #D5D4D8;
+    --color-slider-off: #ccc;
+    --color-slider-on: linear-gradient(180deg,#777,#3a3a3a);
+    --color-white: #F2F3F4;
+
+    /* Components */
+    --input-border: 1px solid #D1D5DB;
+    --border-radius-medium: 4px;
+    --border-radius-large: 6px;
+}
+
+/* ----- GLOBAL -----  */
 
 * {
     box-sizing: border-box;
-    /* outline: 2px dotted tomato; */
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    transition: .5s;
-    color: #374151;
+    font-family: var(--main-font);
+    font-size: var(--base-font-size);
+    transition: var(--base-transition);
+    color: var(--color-primary);
 }
 
-/* 
-------------------------------
-Header
-------------------------------
-*/
+/* ----- HEADER ----- */
 
 .header-container {
     display: flex;
@@ -31,7 +52,7 @@ Header
 
 .header-title {
     font-size: 1.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: var(--text-shadow);
     text-align: center;
     padding: 0.5em;
 }
@@ -61,21 +82,21 @@ Header
     width: 68vw;
     margin: 0 auto;
     padding: 0.5em 0.25em;
-    border-radius: 6px;
-    border: 1px solid #D1D5DB;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius-large);
+    border: var(--input-border);
+    box-shadow: var(--box-shadow-light);
 }
 
 .color-scheme-dropdown,
 .color-btn {
     border: none;
-    color: #374151;
+    color: var(--color-primary);
 }
 
 .color-scheme-dropdown {
     width: 60vw;
     height: 1.85em;
-    border-radius: 4px;
+    border-radius: var(--border-radius-medium);
     font-size: 1.15em;
 }
 
@@ -84,56 +105,46 @@ Header
     grid-area: getColorBtn;
     line-height: 1em;
     padding: 1em 0.5em;
-    border-radius: 4px;
-    border: 1px solid #D1D5DB;
-    background: #FFF;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius-medium);
+    border: var(--input-border);
+    background: var(--color-white);
+    box-shadow: var(--box-shadow-light);
 }
 
 .color-input:hover,
 .color-btn:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+    transition: var(--transform-transition);
 }
 
 .color-input:active,
 .color-btn:active {
-    transform: scale(0.95) !important;
+    transform: scale(0.95);
 }
 
-.color-input:hover,
-.color-scheme-dropdown:hover,
-.color-btn:hover,
-.footer-icon:hover {
+.color-input,
+.color-scheme-dropdown-container,
+.color-scheme-dropdown,
+.color-btn,
+.footer-icon,
+.color-result {
     cursor: pointer;
 }
 
-/* 
- * Shared hover and focus styles for input fields, dropdowns, and buttons
- */
- .color-input:hover,
- .color-scheme-dropdown-container:hover,
- .color-scheme-dropdown-container:hover .color-scheme-dropdown,
- .color-btn:hover,
- .color-input:focus,
- .color-scheme-dropdown-container:focus,
- .color-scheme-dropdown-container:focus .color-scheme-dropdown,
- .color-btn:focus {
-     background: linear-gradient(to right, #e9e4f0, #d3cce3);
- }
+.color-input:hover, .color-input:focus,
+.color-scheme-dropdown-container:hover, .color-scheme-dropdown-container:focus,
+.color-scheme-dropdown-container:hover .color-scheme-dropdown, .color-scheme-dropdown-container:focus .color-scheme-dropdown,
+.color-btn:hover, .color-btn:focus {
+    background: var(--color-input-hover);
+}
 
  .color-btn:focus,
  .color-input:focus,
  .color-scheme-dropdown:focus {
-    box-shadow: 0 0 4px 1px #3D4B60;
+    box-shadow: var(--box-shadow-focus);
 }
 
-
-/* 
-------------------------------
-Main section
-------------------------------
-*/
+/* ----- MAIN ----- */
 
 .color-result-container {
     display: flex;
@@ -147,19 +158,18 @@ Main section
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease-in-out;
+    transition: var(--transform-transition);
 }
 
 .copy-text {
     visibility: hidden;
-    color: #FFF;
+    color: var(--color-white);
     font-weight: bold;
 }
 
 .color-result:hover {
     transform: scale(1.025);
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: var(--border-radius-large);
 }
 
 .color-result:active {
@@ -167,19 +177,15 @@ Main section
 }
 
 .color-result:focus {
-    box-shadow: 0 0 4px 1px #3D4B60;
+    box-shadow: var(--box-shadow-focus);
 }
 
 .color-result-hex-code {
-    color: #2B283A;
+    color: var(--color-primary);
     margin: 0 auto;
 }
 
-/* 
-------------------------------
-Footer
-------------------------------
-*/
+/* ----- FOOTER ----- */
 
 footer {
     text-align: center;
@@ -198,23 +204,18 @@ footer {
 }
 
 footer a {
-    color: #2B283A;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
-
-/* 
-------------------------------
-Toggle button
-------------------------------
-*/
+/* ----- TOGGLE SWITCH ----- */
 
 /* outer shell */
 .switch {
     position: relative;
     display: inline-block;
-    width: 50px;  /* Reduced from 60px */
-    height: 28px; /* Reduced from 34px */
+    width: 50px;  
+    height: 28px; 
 }
 
 .switch:focus-within .slider {
@@ -235,9 +236,9 @@ Toggle button
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    transition: .5s;
-    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.3), inset 0px -5px 15px rgba(255,255,255,0.3);
+    background-color: var(--color-slider-off);
+    transition: var(--base-transition);
+    box-shadow: inset var(--box-shadow-deep), inset 0px -5px 15px rgba(255,255,255,0.3);
 }
 
 /* slider knob */
@@ -252,12 +253,12 @@ Toggle button
 .slider:before {
     position: absolute;
     content: "";
-    height: 22px;  /* Reduced from 26px */
-    width: 22px;   /* Reduced from 26px */
-    left: 3px;     /* Reduced from 4px */
-    bottom: 3px;   /* Reduced from 4px */
-    background-color: white;
-    transition: .5s;
+    height: 22px; 
+    width: 22px;  
+    left: 3px;    
+    bottom: 3px;   
+    background-color: var(--color-white);
+    transition: var(--base-transition);
 }
 
 /* slider to the right */
@@ -266,59 +267,51 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider {
-    background: linear-gradient(180deg,#777,#3a3a3a);
+    background: var(--color-slider-on);
 }
 
 input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
 }
 
-/* 
-------------------------------
-Dark mode styles
-------------------------------
-*/
+/* ----- DARK THEME ----- */
 
 body.dark-theme {
-    background-color: #1F2937;
+    background-color: var(--color-dark-theme-bg);
 }
 
 body.dark-theme .color-btn {
     background-color: #3D4B60;
-    color: #FFF;
+    color: var(--color-dark-theme-text);
 }
 
-body.dark-theme .color-scheme-dropdown {
-    background-color: #1F2937;
-    color: #D5D4D8;
+body.dark-theme .color-scheme-dropdown, 
+body.dark-theme .color-scheme-dropdown-container {
+    background-color: var(--color-dark-theme-bg);
+    color: var(--color-dark-theme-text);
 }
 
 body.dark-theme .header-title,
-body.dark-theme .color-scheme-dropdown-container,
 body.dark-theme .color-result-hex-code,
 body.dark-theme footer,
-body.dark-theme .footer-icon {
-    color: #D5D4D8;
+body.dark-theme .footer-icon,
+body.dark-theme footer a {
+    color: var(--color-dark-theme-text);
 }
 
-body.dark-theme .color-scheme-dropdown-container {
-    background-color: #1F2937;
-}
-
-body.dark-theme .color-btn:hover {
-    background: linear-gradient(180deg,#777,#3a3a3a);
+body.dark-theme .color-btn:hover,
+body.dark-theme .color-scheme-dropdown-container:hover,
+body.dark-theme .color-scheme-dropdown-container:hover .color-scheme-dropdown {
+    background: var(--color-slider-on);
 }
 
 body.dark-theme footer a {
-    color: #D5D4D8;
     text-decoration: none;
 }
 
-/* 
-------------------------------
-Media queries
-------------------------------
-*/
+
+
+/* ----- MEDIA QUERIES ----- */
 
 /* mobile device */
 
